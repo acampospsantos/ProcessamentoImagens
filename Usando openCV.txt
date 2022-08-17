@@ -1,0 +1,4 @@
+
+Comando(pra chegar nesse local) cd c:\opencv\sources\samples\python
+
+Comando(padrão p/ usar o filtro) python asasasa.py
