@@ -27,6 +27,7 @@ def main(argv):
     if display_dst(DELAY_CAPTION) != 0:
         return 0
 
+
     # Applying Homogeneous blur
     if display_caption('Homogeneous Blur') != 0:
         return 0
@@ -36,6 +37,7 @@ def main(argv):
         if display_dst(DELAY_BLUR) != 0:
             return 0
     
+
     # Applying Gaussian blur
     if display_caption('Gaussian Blur') != 0:
         return 0
@@ -45,6 +47,7 @@ def main(argv):
         if display_dst(DELAY_BLUR) != 0:
             return 0
     
+
     # Applying Median blur
     if display_caption('Median Blur') != 0:
         return 0
@@ -53,6 +56,7 @@ def main(argv):
         dst = cv.medianBlur(src, i)
         if display_dst(DELAY_BLUR) != 0:
             return 0
+    
     
     # Applying Bilateral Filter
     if display_caption('Bilateral Blur') != 0:
@@ -63,11 +67,15 @@ def main(argv):
         if display_dst(DELAY_BLUR) != 0:
             return 0
         
-    # Applying rotate
+
+    # Applying Rotate
     if display_caption('Rotate') != 0:
         return 0
-    image = cv.rotate(src, cv.ROTATE_90_CLOCKWISE)
-    cv.imshow(window_name, image)
+
+    for i in range(1, MAX_KERNEL_LENGTH, 2):
+        dst = cv.rotate(src, cv.ROTATE_90_CLOCKWISE)
+        if display_dst(DELAY_BLUR) != 0:
+            return 0
 
     
     #  Done
