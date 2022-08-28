@@ -1,1 +1,1 @@
-# Códigos da disciplina de Análise de Algoritmos
+# Códigos da disciplina de Processamento de Imagens
