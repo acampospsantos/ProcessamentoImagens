@@ -1,6 +1,7 @@
 import sys
 import cv2 as cv
 import numpy as np
+
 #  Global Variables
 DELAY_CAPTION = 1500
 DELAY_BLUR = 100
@@ -8,6 +9,7 @@ MAX_KERNEL_LENGTH = 31
 src = None
 dst = None
 window_name = 'Smoothing Demo'
+
 def main(argv):
     cv.namedWindow(window_name, cv.WINDOW_AUTOSIZE)
     # Load the source image
@@ -81,6 +83,7 @@ def main(argv):
     #  Done
     display_caption('Done!')
     return 0
+
 def display_caption(caption):
     global dst
     dst = np.zeros(src.shape, src.dtype)

@@ -28,7 +28,7 @@ def main(argv):
     print("--------------------")
     opcao = int(input('Digite a opção desejada: '))
    
-    # Original Image  
+    # Original Image  --> Imprime a Imagem Original (independe da escolha do usuário)
     if display_caption('Original Image') != 0: ##Telinha da Imagem Original
         return 0
     global dst

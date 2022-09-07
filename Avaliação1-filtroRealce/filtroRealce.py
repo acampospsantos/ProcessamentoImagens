@@ -4,24 +4,23 @@
 """
 import sys
 import cv2 as cv
-
 import numpy as np
+import argparse
 
-def main(argv):
-    
+def main(argv):    
     window_name = ('Sobel Demo - Simple Edge Detector')
     scale = 1
     delta = 0
     ddepth = cv.CV_16S
-    
-    
-    
 
-    # Load the image
-    imageName = argv[0] if len(argv) > 0 else 'C:\\Users\\Pichau\\Downloads\\airplane.png'
-    global src
-    src = cv.imread(cv.samples.findFile(imageName))
+    # Loads an image...
+    parser = argparse.ArgumentParser(description='Code for filtro realce.')
+    parser.add_argument('--input', help='Path to input image.', default='fruits.png')
+    args = parser.parse_args()
 
+    # ... Loads the image
+    src = cv.imread(cv.samples.findFile(args.input))
+    dst = cv.imread(cv.samples.findFile(args.input))
     # Check if image is loaded fine
     if src is None:
         print ('Error opening image: ' + argv[0])
@@ -49,7 +48,8 @@ def main(argv):
     
     grad = cv.addWeighted(abs_grad_x, 0.5, abs_grad_y, 0.5, 0)
     
-    
+    # Display the source and after effects in a window = Exibe ambas as imagens (original e após efeito do Realce):
+    cv.imshow('Source image', dst)
     cv.imshow(window_name, grad)
     cv.waitKey(0)
     
