@@ -10,7 +10,7 @@ from collections import deque
 import warnings
 warnings.filterwarnings("ignore")
 
-#Sabemos que todas a imegens tem dimensao 200x200
+#Sabemos que todas a imagens tem dimensao 200x200
 def get_slices(img):
     
     w, h = img.shape
@@ -30,8 +30,7 @@ def get_slices(img):
     
     return slices
 
-# Retorna uma lista com as coordeanadas dos pixels vizinhos do
-# pixel img(x, y)
+# Retorna uma lista com as coordenadas dos pixels vizinhos do pixel img(x, y)
 def get_vizinhos(x, y, w, h):
     lista = deque()
     pontos = [(x-1,y), (x+1, y), (x,y-1), (x,y+1),
@@ -42,8 +41,7 @@ def get_vizinhos(x, y, w, h):
             lista.append((p[0], p[1]))        
     return lista
 
-def get_coor_slices (img, slices):
-    
+def get_coor_slices (img, slices):        
     count = 0
     w, h = img.shape
     fila = deque()
